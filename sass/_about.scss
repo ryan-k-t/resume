@@ -1,0 +1,24 @@
+h1 {
+    font-family: "Roboto Slab";
+    font-weight: 900;
+    font-size: 3rem;
+
+    + address {
+        color: var(--theme-copy-shaded);
+        transition: color .15s ease-in-out;
+    }
+}
+
+
+.about {
+    @include media-breakpoint-up(md){
+        @include make-row();
+    }
+}
+.name-address {
+    @include media-breakpoint-up(md){
+        @include make-col-ready();
+        max-width: 75%;
+        flex: 1 1 0;
+    }
+}

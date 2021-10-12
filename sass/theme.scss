@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab:wght@200;500;900&display=swap');
+
+@import "_functions";
+@import "_variables";  // <-------- Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
+@import "../src/sass/bootstrap4/bootstrap";      // <-------- Loads Bootstrap4
+@import "../src/sass/fontawesome/font-awesome";
+@import "_css-variables";
+body {
+
+    font-family: "Roboto";
+    background-color: var(--theme-background-color);
+    color: var(--theme-copy-color);
+    transition: background .15s ease-in-out, color .15s ease-in-out;
+
+    > article {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+
+        > main {
+            order: 2;
+            flex-grow: 1;
+        }
+        > aside {
+            order: 1;
+        }
+        > footer {
+            order: 3;
+        }
+    }
+}
+.container {
+    @include media-breakpoint-down(lg){
+        max-width: calc( 100vw - 4rem );
+    }
+    @include media-breakpoint-down(xs){
+        max-width: none;
+    }
+}
+a {
+    transition: color .15s ease-in-out;
+    color: var(--theme-a);
+    &:hover {
+        color: var(--theme-a-hover);
+    }
+}
+
+.section-container {
+    h2 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: var(--theme-section-header-color);
+        font-family: 'Roboto Condensed';
+        font-weight: 700;
+        transition: color .15s ease-in-out;
+
+        &:before {
+            @include fa-icon;
+            content: $fa-var-hand-o-right;
+            font-size: .6667em;
+            overflow: hidden;
+            width: 0;
+            transition: width 250ms ease-in-out, color .15s ease-in-out;
+            color: var(--theme-copy-color);
+        }
+    }
+
+    &:hover {
+        h2 {
+            &:before {
+                width: 2rem;
+            }
+        }
+    }
+    @media print {
+        h2 {
+            &:before {
+                width: 2rem;
+            }
+        }
+    }
+}
+
+
+@import "_footer";
+@import "_main";
+@import "_about";
+@import "_contacts";
+@import "_mode-controller";
+@import "_education";
+@import "_experience";
+@import "_skills";
+
+@import "_print";

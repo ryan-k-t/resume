@@ -1,0 +1,36 @@
+body {
+    /**
+     * the variables
+     **/
+    --theme-background-color: #{$white};
+    --theme-copy-color: #{$gray-900};
+    --theme-copy-shaded: #{$gray-700};
+    --theme-copy-shaded-2: #{$gray-600};
+    --theme-section-header-color: #{$gray-700};
+    --theme-border-color: #{$gray-300};
+    --theme-shade-400: #{$gray-400};
+    --theme-primary-color: #{$primary};
+    --theme-a: #{$link-color};
+    --theme-a-hover: #{$link-hover-color};
+    --theme-control-focus-border: #{ lighten($primary, 25%) };
+    --theme-control-focus-shadow: #{ 0 0 0 $input-btn-focus-width rgba($primary, .25) };
+    --theme-pattern-accent-color: #{$gray-200};
+
+    &.dark-mode {
+        @media screen {
+            --theme-background-color: #{$gray-900};
+            --theme-copy-color: #{$gray-100};
+            --theme-copy-shaded: #{$gray-300};
+            --theme-copy-shaded-2: #{$gray-400};
+            --theme-section-header-color: #{ lighten($orange, 25%) };
+            --theme-border-color: #{$gray-700};
+            --theme-shade-400: #{$gray-600};
+            --theme-primary-color: #{$orange};
+            --theme-a: #{$orange};
+            --theme-a-hover: #{darken($orange, 15%)};
+            --theme-control-focus-border: #{ lighten($orange, 50%) };
+            --theme-control-focus-shadow: #{ 0 0 0 $input-btn-focus-width rgba($orange, .25) };
+            --theme-pattern-accent-color: #{$gray-800};
+        }
+    }
+}

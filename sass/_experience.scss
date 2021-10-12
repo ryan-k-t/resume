@@ -1,0 +1,56 @@
+.experience {
+    ol {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        margin-top: 1rem;
+    }
+    .experience-item {
+        &:not(:first-child){
+            margin-top: 2rem;
+        }
+
+        > header {
+            display: flex;
+            flex-direction: column;
+            @include media-breakpoint-up(md){
+                flex-direction: row;
+                align-items: flex-end;
+            }
+            border-bottom: 1px solid var(--theme-border-color);
+            transition: border .15s ease-in-out;
+            margin-bottom: 1rem;
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .title {
+            &:after {
+                content: ",";
+            }
+        }
+        .institution {
+            margin-left: .5rem;
+            font-weight: 200;
+        }
+        .position-held {
+            @include media-breakpoint-up(md){
+                flex-basis: 60%;
+            }
+        }
+        .timeframe {
+            @include media-breakpoint-up(md){
+                margin-left: auto;
+                padding-left: 1rem;
+                flex-basis: 40%;
+                text-align: right;
+            }
+
+            h5 {
+                font-size: 1rem;
+            }
+        }
+    }
+}

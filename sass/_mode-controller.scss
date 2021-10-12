@@ -1,0 +1,38 @@
+.mode-controller {
+    border-bottom: $border-width solid var(--theme-border-color);
+    background-color: var(--theme-background-color);
+    transition: border .15s ease-in-out, background .15s ease-in-out;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    text-align: right;
+
+    .custom-control-input {
+        &:checked ~ .custom-control-label::before {
+            border-color: var(--theme-primary-color);
+            background-color: var(--theme-primary-color);
+        }
+
+        &:focus ~ .custom-control-label::before {
+            box-shadow: var(--theme-control-focus-shadow);
+        }
+        &:focus:not(:checked) ~ .custom-control-label::before {
+            border-color: var(--theme-control-focus-border);
+        }
+    }
+
+    .custom-control-label {
+        font-size: .8em;
+        vertical-align: middle;
+
+        &:before {
+            top: .125rem;
+        }
+        &:after {
+            top: calc(.125rem + 2px);
+        }
+    }
+
+    @media print {
+        display: none;
+    }
+}
