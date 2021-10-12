@@ -1,8 +1,8 @@
 {
     "paths" : {
-      "js": "./httpdocs/js",
-      "css": "./httpdocs/css",
-      "img": "./httpdocs/img",
+      "js": "./js",
+      "css": "./css",
+      "img": "./img",
       "imgsrc": "./src/img",
       "sass": "./sass",
       "node": "./node_modules/",
